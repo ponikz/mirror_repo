@@ -10,7 +10,7 @@ jobs:
         run: echo ${{ gitverse.event_name }}
       - name: Display Workflow
         run: echo ${{ gitverse.workflow }}
-      - name: Display repository name
+      - name: Display repository nam
         run: echo ${{ gitverse.Repository}}
       - name: Display repository owner
         run: echo ${{ gitverse.repository_owner }}
