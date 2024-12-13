@@ -4,7 +4,7 @@ on:
 jobs:
   build-test:
     name: Test context
-    runs-on: ubuntu-cloud-runner
+    runs-on: ubuntu-cloud-runner1111
     steps:
       - name: Display event namе1
         run: echo ${{ gitverse.event_name }}
