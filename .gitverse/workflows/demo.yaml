@@ -6,7 +6,7 @@ jobs:
     name: Test context1
     runs-on: ubuntu-cloud-runner
     steps:
-      - name: Display event nam1
+      - name: Display event namе
         run: echo ${{ gitverse.event_name }}
       - name: Display Workflow
         run: echo ${{ gitverse.workflow }}
