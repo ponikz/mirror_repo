@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   build-test:
-    name: Test context1
+    name: Test context
     runs-on: ubuntu-cloud-runner
     steps:
       - name: Display event namе1
