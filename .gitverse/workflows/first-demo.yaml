@@ -6,13 +6,5 @@ jobs:
     name: Test context
     runs-on: ubuntu-cloud-runner
     steps:
-      - name: Display event namе1
-        run: echo ${{ gitverse.event_name }}
-      - name: Display Workflow
-        run: echo ${{ gitverse.workflow }}
-      - name: Display repository n
-        run: echo ${{ gitverse.Repository}}
-      - name: Display repository owner
-        run: echo ${{ gitverse.repository_owner }}
-      - name: Display actor
-        run: echo ${{ gitverse.actor }}
+      - name: print env
+        run: printenv
