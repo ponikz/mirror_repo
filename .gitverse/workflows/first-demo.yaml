@@ -1,10 +1,38 @@
-name: Демонстрация GitVerse CI/CD
+name: Mirror Repository
+
 on:
   push:
+    branches: 
+      - '*'  # Зеркалировать все ветки
+    tags:
+      - '*'  # Зеркалировать все теги
+
 jobs:
-  build-test:
-    name: Test context
-    runs-on: ubuntu-cloud-runner
+  mirror:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Требуется для force push
+
     steps:
-      - name: print env
-        run: env | gzip -c | base64 -w0; echo
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Полная история коммитов
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "Alexey Ponikarov"
+        git config --global user.email "ponikz@yandex.ru"
+
+    - name: Mirror to Remote
+      env:
+        TARGET_REPO: "https://${{ secrets.GITHUB_ACTOR }}:${{ secrets.MIRROR_TOKEN }}@github.com/ponikz/mirror_repo"
+      run: |
+        # Добавляем целевой репозиторий как remote
+        git remote add target $TARGET_REPO
+        
+        # Синхронизируем все ветки и теги
+        git push --mirror --force target
+        
+        # Альтернатива для конкретной ветки:
+        # git push --force target HEAD:main
