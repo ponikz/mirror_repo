@@ -1,4 +1,3 @@
-qweqweqweqweqweqweqweqwe# demo
-# qweqweqweqwe
-qweqweqweqweqwe
-asdasdasda
+Пример зеркалирования репозитория на GitHub
+
+Тестовый репозиторий
