@@ -26,7 +26,7 @@ jobs:
 
     - name: Mirror to Remote
       env:
-        TARGET_REPO: "https://${{ secrets.GH_MIRROR_ACTOR }}:${{ secrets.GH_MIRROR_TOKEN }}@github.com/${{ secrets.GH_MIRROR_ACTOR }}/${{ secrets.GH_MIRROR_REPO }}"
+        TARGET_REPO: "https://${{ secrets.GH_MIRROR_TOKEN }}@github.com/${{ secrets.GH_MIRROR_ACTOR }}/${{ secrets.GH_MIRROR_REPO }}"
       run: |
         # Добавляем целевой репозиторий как remote
         git remote add target $TARGET_REPO
