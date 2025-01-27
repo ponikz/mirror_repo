@@ -19,7 +19,7 @@ jobs:
       with:
         fetch-depth: 0  # Полная история коммитов
 
-    - name Configure Git
+    - name: Configure Git
       run: |
         git config --global user.name "Your Name"
         git config --global user.email "Your e-mail"
