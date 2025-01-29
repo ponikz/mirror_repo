@@ -9,7 +9,7 @@ on:
 
 jobs:
   mirror:
-    runs-on: ubuntu-cloud-runner
+    runs-on: ubuntu-latest
     permissions:
       contents: write  # Требуется для force push
 
